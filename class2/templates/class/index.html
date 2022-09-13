@@ -1,0 +1,509 @@
+{% load static %}
+{% load crispy_forms_tags %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+    <title>AbrarClass - Here to learn, anything, on your schedule.</title>
+    
+
+    <link href="{% static 'class/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="{% static 'class/assets/images/fav.png' %}">
+    <link rel="stylesheet" href="{% static 'class/assets/css/fontawesome.css' %}">
+    <link rel="stylesheet" href="{% static 'class/assets/css/templatemo-grad-school.css' %}">
+    <link rel="stylesheet" href="{% static 'class/assets/css/owl.css' %}">
+    <link rel="stylesheet" href="{% static 'class/assets/css/lightbox.css' %}">
+
+    
+
+  </head>
+
+<body>
+
+   
+  <header class="main-header clearfix" role="header">
+    <div class="logo">
+      <a href="{% url 'index' %}"><em>Abrar</em> Class</a>
+    </div>
+    <a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
+    <nav id="menu" class="main-nav" role="navigation">
+      <ul class="main-menu">
+        <li><a href="{% url 'index' %}">Home</a></li>
+        <li class="has-submenu"><a href="#section2">About Us</a>
+          <ul class="sub-menu">
+            <li><a href="#section1">Who we are?</a></li>
+            <li><a href="#section2">Why choose Us?</a></li>
+          </ul>
+        </li>
+        {% if user.is_authenticated %}
+          <li><a href="#section3">Your Profile</a></li>
+        {% else %}
+          <li><<a href="#section3">Login</a></li>
+        {% endif %}
+        <li><a href="#section4">Courses</a></li>
+        <li><a href="#section5">Video</a></li>
+        <li><a href="#section6">Contact</a></li>
+
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ***** Main Banner Area Start ***** -->
+  <section class="section main-banner" id="top" data-section="section1">
+      <video autoplay muted loop id="bg-video">
+          <source src="{% static 'class/assets/images/course-video.mp4' %}" type="video/mp4" />
+      </video>
+
+      <div class="video-overlay header-text">
+          <div class="caption">
+            <h6>Here to Learn, Anything, On Your Schedule</h6>
+              <h2><em>Abrar</em> Class
+                
+                <br>
+                <p>Talented people can be everywhere but opportunities can be harder to find.
+                <br>
+               That's why AbrarClass is a non-profit free online learning platform to give
+                <br>
+               opportunities to everyone across the globe.</p>
+              </h2>
+              <br>
+              <br>
+              <div class="main-button">
+                  <div class="scroll-to-section"><a href="#section2">Discover more</a></div>
+              </div>
+          </div>
+      </div>
+  </section>
+  <!-- ***** Main Banner Area End ***** -->
+
+
+  <section class="features">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-12">
+          <div class="features-post">
+            <div class="features-content">
+              <div class="content-show">
+                <h4><i class="fa fa-pencil"></i>About AbrarClass</h4>
+              </div>
+              <div class="content-hide">
+                <p>Where can you go online to learn—not just learn to solve an immediate problem, but advance your understanding of a topic or start studying something from scratch? For most subjects, the best place is AbrarClass.
+                <br>
+                AbrarClass is a free online learning service with course material covering math, science, computer science, coding etc. Our lessons contain videos, readings, and interactive components, which are sequenced so that you can start from square one with any subject and slowly build your knowledge.</p>
+            </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-12">
+          <div class="features-post third-features">
+            <div class="features-content">
+              <div class="content-show">
+                <h4><i class="fa fa-book"></i>World Class and Passionate Instructors</h4>
+              </div>
+              <div class="content-hide">
+                <p>
+                  AbrarClass Instructors are real people who are passionate about sharing what they know with students all over the world.
+                  <br>
+                  That is why <em>Every Week</em>, along with the regular course classes, online meetings are held with teachers where students can learn live in online classes and clear any doubts and queries by asking questions to the teachers.
+                </p>
+            </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-12">
+          <div class="features-post second-features">
+            <div class="features-content">
+              <div class="content-show">
+                <h4><i class="fa fa-graduation-cap"></i>Virtual Class</h4>
+              </div>
+              <div class="content-hide">
+                <p>
+                  Virtual Classes are held in Zoom every week, where the link will be posted in the course virtual class link section 
+                </p>
+                <div class="scroll-to-section"><a href="#section3">Details</a></div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section why-us" data-section="section2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="section-heading">
+            <h2>Why choose AbrarClass?</h2>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div id='tabs'>
+            <ul>
+              <li><a href='#tabs-1'>Best Education</a></li>
+              <li><a href='#tabs-2'>Personalized learning</a></li>
+              <li><a href='#tabs-3'>Quality Classes and Content</a></li>
+            </ul>
+            <section class='tabs-content'>
+              <article id='tabs-1'>
+                <div class="row">
+                  <div class="col-md-6">
+                    <img src="{% static 'class/assets/images/choose-us-image-01.jpg' %}" alt="">
+                  </div>
+                  <div class="col-md-6">
+                    <h4>Trusted content</h4>
+                    <p>
+                      Created by experts, AbrarClass' library of trusted practice and lessons covers math, science, and more. Always free for learners.
+                    </p>
+                  </div>
+                </div>
+              </article>
+              <article id='tabs-2'>
+                <div class="row">
+                  <div class="col-md-6">
+                    <img src="{% static 'class/assets/images/choose-us-image-02.jpg' %}" alt="">
+                  </div>
+                  <div class="col-md-6">
+                    <h4>Learn Anything, On Your Schedule</h4>
+                    <p>Students practice at their own pace, first filling in gaps in their understanding and then accelerating their learning.</p>
+                  </div>
+                </div>
+              </article>
+              <article id='tabs-3'>
+                <div class="row">
+                  <div class="col-md-6">
+                    <img src="{% static 'class/assets/images/choose-us-image-03.jpg' %}" alt="">
+                  </div>
+                  <div class="col-md-6">
+                    <h4>High Quality Coding Videos</h4>
+                    <p>We make sure to teach the right things in the right order using top-drawer videos, since a lot of students tend to give up or they don't build the right foundations.</p>
+                  </div>
+                </div>
+              </article>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section coming-soon" data-section="section3">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-7 col-xs-12">
+          <div class="continer centerIt">
+            <div>
+              <h4>Take <em>any online course</em> and win $326 for your next class</h4>
+              <div class="counter">
+
+                <div class="days">
+                  <div class="value">00</div>
+                  <span>Days</span>
+                </div>
+
+                <div class="hours">
+                  <div class="value">00</div>
+                  <span>Hours</span>
+                </div>
+
+                <div class="minutes">
+                  <div class="value">00</div>
+                  <span>Minutes</span>
+                </div>
+
+                <div class="seconds">
+                  <div class="value">00</div>
+                  <span>Seconds</span>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        {% if user.is_authenticated %}
+        <div class="col-md-5">
+          <div class="right-content">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="top-content">
+              <h6> Welcome back <em>{{ user.username }}</em></h6>
+              <h6>View your <a href="{% url 'your_courses' %}">Courses</a></h6>
+              <h6>View your <a href="{% url 'profile' user.id %}">Profile</a></h6>
+            </div>
+            <form id="contact" action="" method="get">
+              <div class="row">
+                <div class="col-md-12">
+                  <fieldset>
+                    <a class="badge badge-warning" href="{% url 'logout' %}">Logout</a>
+                  </fieldset>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="col-md-5">
+        {% else %}
+        <div class="col-md-5">
+          <div class="right-content">
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="top-content">
+              <h6>Login with your account and <em>get immediate</em> access to online courses</h6>
+            </div>
+            <form id="contact" action="" method="get">
+              <div class="row">
+                <div class="col-md-12">
+                  <fieldset>
+                    <a class="badge badge-warning" href="{% url 'login' %}">Login</a>
+                  </fieldset>
+                </div>
+              </div>
+            </form>
+            <div class="border-top pt-3">
+              <small class="text-muted">
+                Need An Account? <a class="ml-2" href="{% url 'register' %}">Sign Up</a>
+              </small>
+            </div>
+          </div>
+        </div>
+        {% endif %}
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section courses" data-section="section4">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="section-heading">
+            <h2>Choose Your Course</h2>
+          </div>
+        </div>
+        <div class="owl-carousel owl-theme">
+          {% for course in courses %}
+          <div class="item">
+            <img src="{{ course.image }}" alt="Course #1">
+            <div class="down-content">
+              <h4><a href="{% url 'course' course.slug  %}">{{ course.title }}</h4>
+              <p>{{ course.description }}</p>
+              <div class="author-image">
+                <img src="{{ course.instructor_image }}" alt="Author 1">
+                {{ course.instructor }}
+              </div>
+              <br>
+              <form method="post" action="{% url 'get_enrolled' course.slug %}">
+                {% csrf_token %}
+                <button class="btn btn-danger" type="submit">Get Enrolled<i class="fa fa-angle-double-right"></i></button>
+              </form>
+            </div>
+          </div>
+          {% endfor %} 
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!--   <section class="section courses" data-section="section4">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="section-heading">
+            <h2>Choose Your Course</h2>
+          </div>
+          <div class="row">
+            {% for course in courses %}
+              <div class="col-md-3 col-sm-6 text-center">
+                <figure class="card card-product-grid">
+                  <div class="img-wrap"> <img src="{{ course.image }}"> </div>
+                  <figcaption class="info-wrap border-top">
+                    <h5><a href="{% url 'course' course.slug  %}" class="title text-dark text-bold">{{ course.title }}</a></h5>
+                    <p>{{ course.description }}</p>
+                    <div class="author-image">
+                      <img class="rounded-circle article-img" src="{{ course.instructor_image }}" alt="Author 1">
+                      {{ course.instructor }}
+                    </div>
+                    <br>
+                    <div class="button">
+                      <a href="{% url 'course' course.slug  %}">Get Enrolled <i class="fa fa-angle-double-right"></i></a>
+                    </div>
+                    <div class="price mt-2"><span class="badge badge-warning">Limited Seats!</span></div>
+                  </figcaption>
+                </figure>
+              </div>
+            {% endfor %} 
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+
+  <section class="section video" data-section="section5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 align-self-center">
+          <div class="left-content">
+            <span>our presentation is for you</span>
+            <h4>Watch the video to learn more <em>about AbrarClass</em></h4>
+
+            <div class="main-button"><a rel="nofollow" href="https://www.facebook.com/people/Abrar-Shahriar/100011063379538/" target="_parent">About Abrar Shahriar</a></div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <article class="video-item">
+            <div class="video-caption">
+              <h4>About Us</h4>
+            </div>
+            <figure>
+              <a href="https://www.youtube.com/watch?v=r9LtOG6pNUw" class="play"><img src="{% static 'class/assets/images/main-thumb.png' %}"></a>
+            </figure>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="section contact" data-section="section6">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="section-heading">
+            <h2>Let’s Keep In Touch</h2>
+          </div>
+        </div>
+        <div class="col-md-6">
+        
+                    
+          <form id="contact" action="" method="post">
+            <div class="row">
+              <div class="col-md-6">
+                  <fieldset>
+                    <input name="name" type="text" class="form-control" id="name" placeholder="Your Name" required="">
+                  </fieldset>
+                </div>
+                <div class="col-md-6">
+                  <fieldset>
+                    <input name="email" type="text" class="form-control" id="email" placeholder="Your Email" required="">
+                  </fieldset>
+                </div>
+              <div class="col-md-12">
+                <fieldset>
+                  <textarea name="message" rows="6" class="form-control" id="message" placeholder="Your message..." required=""></textarea>
+                </fieldset>
+              </div>
+              <div class="col-md-12">
+                <fieldset>
+                  <button type="submit" id="form-submit" class="button">Send Message Now</button>
+                </fieldset>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="col-md-6">
+          <div id="map">
+            <iframe src="https://maps.google.com/maps?q=Av.+L%C3%BAcio+Costa,+Rio+de+Janeiro+-+RJ,+Brazil&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="422px" frameborder="0" style="border:0" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <p><i class="fa fa-copyright"></i> Copyright 2022 by AbrarClass  
+          
+           | Design: <a href="https://www.facebook.com/people/Abrar-Shahriar/100011063379538/" rel="sponsored" target="_parent">Abrar Shahriar</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+    <script src="{% static 'class/vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'class/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+    <script src="{% static 'class/assets/js/isotope.min.js' %}"></script>
+    <script src="{% static 'class/assets/js/owl-carousel.js' %}"></script>
+    <script src="{% static 'class/assets/js/lightbox.js' %}"></script>
+    <script src="{% static 'class/assets/js/tabs.js' %}"></script>
+    <script src="{% static 'class/assets/js/video.js' %}"></script>
+    <script src="{% static 'class/assets/js/slick-slider.js' %}"></script>
+    <script src="{% static 'class/assets/js/custom.js' %}"></script>
+    <script>
+        //according to loftblog tut
+        $('.nav li:first').addClass('active');
+
+        var showSection = function showSection(section, isAnimate) {
+          var
+          direction = section.replace(/#/, ''),
+          reqSection = $('.section').filter('[data-section="' + direction + '"]'),
+          reqSectionPos = reqSection.offset().top - 0;
+
+          if (isAnimate) {
+            $('body, html').animate({
+              scrollTop: reqSectionPos },
+            800);
+          } else {
+            $('body, html').scrollTop(reqSectionPos);
+          }
+
+        };
+
+        var checkSection = function checkSection() {
+          $('.section').each(function () {
+            var
+            $this = $(this),
+            topEdge = $this.offset().top - 80,
+            bottomEdge = topEdge + $this.height(),
+            wScroll = $(window).scrollTop();
+            if (topEdge < wScroll && bottomEdge > wScroll) {
+              var
+              currentId = $this.data('section'),
+              reqLink = $('a').filter('[href*=\\#' + currentId + ']');
+              reqLink.closest('li').addClass('active').
+              siblings().removeClass('active');
+            }
+          });
+        };
+
+        $('.main-menu, .scroll-to-section').on('click', 'a', function (e) {
+          if($(e.target).hasClass('external')) {
+            return;
+          }
+          e.preventDefault();
+          $('#menu').removeClass('active');
+          showSection($(this).attr('href'), true);
+        });
+
+        $(window).scroll(function () {
+          checkSection();
+        });
+    </script>
+</body>
+</html>

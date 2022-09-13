@@ -1,0 +1,24 @@
+{% extends "class/base.html" %}
+{% block content %}
+<br>
+<h2 style="color: #f5a425">{{ user.username }}'s Enrolled Courses</h2>
+<br>
+<table class="table">
+	<thead class="thead-dark">
+		<tr>
+			<th scope="col">Image</th>
+			<th scope="col">Course</th>
+			<th scope="col">What You'll Learn</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for course in your_courses %}
+			<tr>
+				<th scope="row"><img src="{{ course.image.url }}"></th>
+				<td><a href="{% url 'course' course.slug %}" class="link-dark">{{ course.title }}</a></td>
+				<td><a href="#" class="link-dark">{{ course.description }}</a></td>
+			</tr>
+		{% endfor %}
+	</tbody>
+</table>
+{% endblock content %}
